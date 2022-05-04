@@ -8,7 +8,7 @@
    convert flower.png grey.png -compose copy-opacity -composite flower_alpha.png
    rm grey.png
    ```
- - flower_cropped.png:
+ - flower_cropped.jpg:
    ```
    convert flower.png -gravity center -crop 1040x1040+0+0 +repage flower_cropped.pnm
    cjpeg -outfile flower_cropped.jpg -quality 85 flower_cropped.pnm
@@ -16,7 +16,7 @@
    ```
  - flower.png.ffmpeg.y4m
     ```
-    ffmpeg -i flower.png -pix_fmt yuv420p flower.png.ffmpeg.y4m
+    ffmpeg -i flower.png -pix_fmt yuvj420p flower.png.ffmpeg.y4m
     ```
 
  - flower.png.im_q85_*.jpg:
