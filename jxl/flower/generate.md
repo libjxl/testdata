@@ -33,3 +33,17 @@
    rm flower.pnm
    ```
 
+ - flower_small.*.{ppm,pgm,pam}
+   ```
+   convert flower.png -gravity center -crop 510x532+0+0 +repage flower_small.rgb.png
+   convert flower_small.rgb.png -set colorspace Gray -separate -average flower_small.g.png
+   convert flower_small.rgb.png flower_small.g.png -compose copy-opacity -composite flower_small.rgba.png
+   convert flower_small.g.png flower_small.g.png -compose copy-opacity -composite flower_small.ga.png
+   convert flower_small.rgb.png -ordered-dither o8x8 -depth 1 flower_small.rgb.depth1.ppm
+   for i in `seq 2 16`; do convert flower_small.rgb.png -depth $i flower_small.rgb.depth$i.ppm; done
+   convert flower_small.g.png -ordered-dither o8x8 -depth 1 flower_small.g.depth1.pgm
+   for i in `seq 2 16`; do convert flower_small.g.png -depth $i flower_small.g.depth$i.pgm; done
+   for i in `seq 2 16`; do convert flower_small.ga.png -depth $i flower_small.ga.depth$i.pam; done
+   for i in `seq 2 16`; do convert flower_small.rgba.png -depth $i flower_small.rgba.depth$i.pam; done
+   rm flower_small.*.png
+   ```
