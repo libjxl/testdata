@@ -22,6 +22,7 @@
  - flower.png.im_q85_*.jpg:
    ```
    convert flower.png flower.pnm
+   convert flower.png -set colorspace Gray flower.pgm
    cjpeg -outfile flower.png.im_q85_420.jpg -sample 2x2 -quality 85 flower.pnm
    cjpeg -outfile flower.png.im_q85_420_progr.jpg -sample 2x2 -quality 85 -progressive flower.pnm
    cjpeg -outfile flower.png.im_q85_420_R13B.jpg -sample 2x2 -quality 85 -restart 13B flower.pnm
@@ -29,11 +30,10 @@
    cjpeg -outfile flower.png.im_q85_440.jpg -sample 1x2 -quality 85 flower.pnm
    cjpeg -outfile flower.png.im_q85_444.jpg -sample 1x1 -quality 85 flower.pnm
    cjpeg -outfile flower.png.im_q85_444_1x2.jpg -sample 1x2,1x2,1x2 -quality 85 flower.pnm
-   cjpeg -outfile flower.png.im_q85_gray.jpg -quality 85 -grayscale flower.pnm
+   cjpeg -outfile flower.png.im_q85_gray.jpg -quality 85 -grayscale flower.pgm
    cjpeg -outfile flower.png.im_q85_luma_subsample.jpg -sample 1x1,2x2,2x2 -quality 85 flower.pnm
    cjpeg -outfile flower.png.im_q85_rgb.jpg -sample 1x1 -quality 85 -rgb flower.pnm
    cjpeg -outfile flower.png.im_q85_rgb_subsample_blue.jpg -sample 2x2,2x2,1x1 -quality 85 -rgb flower.pnm
-   rm flower.pnm
    ```
 
  - flower_small.*.{ppm,pgm,pam}
