@@ -57,4 +57,5 @@
    cjpeg -outfile flower_small.q85_444_partially_interleaved.jpg -scans partially_interleaved_scan.txt -sample 1x1 -quality 85 flower_small.rgb.depth8.ppm
    cjpeg -outfile flower_small.q85_420_non_interleaved.jpg -scans non_interleaved_scan.txt -sample 2x2 -quality 85 flower_small.rgb.depth8.ppm
    cjpeg -outfile flower_small.q85_420_partially_interleaved.jpg -scans partially_interleaved_scan.txt -sample 2x2 -quality 85 flower_small.rgb.depth8.ppm
+   convert flower.png -colorspace CMYK -gravity center -crop 510x532+0+0 +repage flower_small.cmyk.jpg
    ```
