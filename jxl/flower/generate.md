@@ -48,7 +48,6 @@
    for i in `seq 2 16`; do convert flower_small.g.png -depth $i flower_small.g.depth$i.pgm; done
    for i in `seq 2 16`; do convert flower_small.ga.png -depth $i flower_small.ga.depth$i.pam; done
    for i in `seq 2 16`; do convert flower_small.rgba.png -depth $i flower_small.rgba.depth$i.pam; done
-   rm flower_small.*.png
    ```
 
  - flower_small.*.jpg
